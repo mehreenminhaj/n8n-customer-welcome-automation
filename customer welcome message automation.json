@@ -1,0 +1,112 @@
+{
+  "name": "customer welcome message automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -176
+      ],
+      "id": "eec55b8e-fd4c-4038-934b-10b43eb03619",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6271d2d7-89ad-4107-a690-d19f9412cdca",
+              "name": "customer_name",
+              "value": "mehreeen",
+              "type": "string"
+            },
+            {
+              "id": "bb92e80b-c63c-4979-b23e-a5ddccc69604",
+              "name": "customer_email",
+              "value": "mehreen@n8n.com",
+              "type": "string"
+            },
+            {
+              "id": "d8e05ff8-8971-4a9d-a235-ca2f1c45aa65",
+              "name": "product",
+              "value": "AI automation bootcamp",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        176,
+        -176
+      ],
+      "id": "ee9aa2b1-4171-43b3-989e-9b687261c582",
+      "name": "Customer Details"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9f7afcc0-783e-4395-a038-7395c372d592",
+              "name": "welcome message",
+              "value": "={{ \"Hi \" + $json.customer_name + \", welcome to \" + $json.product + \"! We're excited to have you with us.\" }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        416,
+        -176
+      ],
+      "id": "1bbec9bc-09e4-4687-a4e3-4948782f3acf",
+      "name": "welcome message"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Customer Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Details": {
+      "main": [
+        [
+          {
+            "node": "welcome message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "0d237108-2b0b-417f-8074-8ac0326541e6",
+  "meta": {
+    "instanceId": "c41274a3c9fbd59651a1b233b9f832d15918292d79ff9dc727c8af81fe2ade09"
+  },
+  "nodeGroups": [],
+  "id": "03jo3YLT5rTfP3pt",
+  "tags": []
+}
