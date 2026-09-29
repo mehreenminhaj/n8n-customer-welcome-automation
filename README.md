@@ -15,13 +15,13 @@ This workflow generates a personalized customer welcome message using sample cus
 
 ## Example Input
 
-- Customer name: Ayesha
-- Customer email: ayesha@example.com
+- Customer name: Mehreen
+- Customer email: mehreeen@n8n.com
 - Product: AI Automation Course
 
 ## Example Output
 
-Hi Ayesha, welcome to AI Automation Course! We're excited to have you with us.
+Hi Mehreen, welcome to AI Automation Course! We're excited to have you with us.
 
 ## Requirements
 
